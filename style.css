@@ -1,0 +1,175 @@
+body{
+   background-color: eee;
+   margin: 0;
+}
+.first-nav {
+
+    display: flex;
+    justify-content: center;
+    padding: 6px 16px;
+    height: 27px;
+    -webkit-box-pack: center;
+    gap: 8px;
+    cursor: pointer;
+    background: linear-gradient(97.53deg, rgb(246, 135, 179) 5.6%, rgb(123, 97, 255) 59.16%, rgb(22, 209, 161) 119.34%);
+}
+.buy{
+ position: relative;
+ bottom: 6px;
+}
+.buy a {
+    font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
+    font-weight: 340;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    color: white;
+
+}
+.buy img{
+ position: relative;
+ top: 6px;
+ right: 5px;
+  
+}
+
+.buy a:hover{
+    
+    background-color: transparent;
+}
+section{
+    background:
+     linear-gradient(to right,rgb(63, 81, 181),rgb(100, 181, 246)) rgb(255, 255, 255) !important;
+    width: 100%;
+    height: 230px;
+
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+a:hover{
+    background-color:rgba(236, 235, 235, 0.617);
+    border-radius: 30px;
+}
+.container{
+    max-width: 1024px;
+    margin: auto;
+   
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+
+nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    background-color:white;
+    font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+nav .logo{
+    padding: 13px 16px;
+    width: 82px;
+    height: 32px;
+}
+.logo:hover{
+    background-color: rgba(236, 235, 235, 0.617);
+    border-radius: 30px;
+}
+nav .setting{
+    display: flex;
+    align-items: center;
+}
+nav .setting >div{
+    padding: 5px;
+
+}
+.setting-logo img{
+    width: 20px;
+    height: 20px;
+
+}
+
+.main-head{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+
+}
+.head{
+    font-size: 18px;
+    font-family:Lato, Helvetica Neue, Arial, Helvetica, sans-serif; 
+    color: white;
+    text-align: center;
+    padding: 40px;
+    padding-top: 30px;
+}
+
+
+/*Coins-table-section*/
+
+.Coins-section{
+    position: relative;
+    bottom: 135px;
+    background-color: rgb(251, 246, 246);
+    max-width: 1120px;
+    margin: 0 auto; /* Zentriert den gesamten Bereich */
+    font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
+}
+
+.coins-row {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(8, 1fr); /* Erstellt 8 gleich breite Spalten */
+    gap: 10px; /* Abstand zwischen den Spalten */
+    padding: 5px 0; /* Abstand oben und unten */
+    border-bottom: 1px solid #ddd; /* Linie zwischen den Zeilen */
+}
+
+.coins-row div {
+    padding: 10px;
+    text-align: center; /* Zentriert den Text in den Zellen */
+    font-size: 14px;
+   
+}
+
+.coins-row:nth-child(odd) {
+    background-color: #f9f9f9; /* Wechselnde Hintergrundfarbe für bessere Lesbarkeit */
+}
+
+
+.coins-row:nth-child(even) {
+    background-color: #fff;
+}
+
+.coins-row:first-child {
+    font-weight: bold;
+    background-color: #f1f1f1; /* Überschrift anders einfärben */
+    border-top: 2px solid #000;
+}
+
+.coins-row div:nth-child(3), 
+.coins-row div:nth-child(4), 
+.coins-row div:nth-child(5),
+.coins-row div:nth-child(6),
+.coins-row div:nth-child(7),
+.coins-row div:nth-child(8) {
+    text-align: right; /* Zahlen rechtsbündig ausrichten */
+}
+
+.Coins-section .coin-name-container{
+    display: flex;
+   align-items: center;
+   
+}
