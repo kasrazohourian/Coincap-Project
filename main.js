@@ -1,3 +1,4 @@
+// DOM Section:
 
 let coinsSection = document.querySelector(".coinsSection");
 
@@ -63,19 +64,25 @@ function renderCoin(data){
     coinsSection.appendChild(row);
 }
 
-let coin = {
-    
-        id: "bitcoin-cash",
-        rank: "4",
-        symbol: "BCH",
-        name: "Bitcoin Cash",
-        supply: "17278438.0000000000000000",
-        maxSupply: "21000000.0000000000000000",
-        marketCapUsd: "11902454455.1536127997298894",
-        volumeUsd24Hr: "287075418.5202079328968427",
-        priceUsd: "688.8617162705108413",
-        changePercent24Hr: "-1.5016094894459434",
-        vwap24Hr: "711.6276356693412774"
-      };
 
-renderCoin(coin);
+
+//Fetch Section :
+
+let baseUrl = "https://api.coincap.io/v2";
+let assetsUrl = baseUrl + "/assets";
+
+async function getAssetsList() {
+    let response = await fetch(assetsUrl);
+    let body = await response.json();
+  
+    return body.data;
+  }
+
+  async function renderCoinsList() {
+    let list = await getAssetsList();
+    
+    list.forEach (function (item) {
+        renderCoin(item);
+    });}
+  
+    renderCoinsList();
