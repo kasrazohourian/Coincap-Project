@@ -173,3 +173,17 @@ nav .setting >div{
    align-items: center;
    
 }
+.coin-symbol{
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 7px;
+    
+}
+.coin-name{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 7px;
+    
+}
