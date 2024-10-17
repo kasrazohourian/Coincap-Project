@@ -119,7 +119,7 @@ nav .setting >div{
 
 /*Coins-table-section*/
 
-.Coins-section{
+.coinsSection{
     position: relative;
     bottom: 135px;
     background-color: rgb(251, 246, 246);
@@ -168,7 +168,7 @@ nav .setting >div{
     text-align: right; /* Zahlen rechtsbündig ausrichten */
 }
 
-.Coins-section .coin-name-container{
+.coinsSection .coin-name-container{
     display: flex;
    align-items: center;
    
