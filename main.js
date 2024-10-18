@@ -104,8 +104,38 @@ async function getAssetsList() {
         renderCoin(item);
     });}
   
-    renderCoinsList().catch(function(error) {
-       
-      renderError("ERRRRRRRRRROR...!")
+   
 
-    });
+
+    // Initial page and limit values
+let page = 1;
+let limit = 100;
+
+// Create the "View More" button
+let viewMoreButton = document.createElement("button");
+viewMoreButton.textContent = "View More";
+document.body.appendChild(viewMoreButton);
+
+// Event listener to load more coins when the button is clicked
+viewMoreButton.addEventListener("click", async function() {
+    page++; // Increment the page number
+    await renderCoinsList();
+});
+
+// Update the assets URL to include pagination parameters
+async function getAssetsList() {
+    let response = await fetch(`${assetsUrl}?limit=${limit}&offset=${(page - 1) * limit}`);
+    let body = await response.json();
+  
+    return body.data;
+}
+
+// Initial render of the first 100 coins
+renderCoinsList().catch(function(error) {
+    renderError("ERRRRRRRRRROR...!");
+});
+
+let containerUnten = document.createElement("div");
+containerUnten.classList.add("containerUnten");
+containerUnten.textContent = "";
+document.body.appendChild(containerUnten);
