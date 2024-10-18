@@ -1,3 +1,7 @@
+const testNumeral = numeral(10878700).format('$0,0.00');
+console.log(testNumeral);
+
+
 // DOM Section:
 
 let coinsSection = document.querySelector(".coinsSection");
@@ -21,29 +25,33 @@ function renderCoin(data){
     nameContainerImg.setAttribute("height","30");
     
     let nameContainerText = document.createElement("div");
+
     let nameContainerName = document.createElement("div");
+    nameContainerName.classList.add("coin-name");
     nameContainerName.textContent = data.name;
+    
     let nameContainerSymbol = document.createElement("div");
+    nameContainerSymbol.classList.add("coin-symbol");
     nameContainerSymbol.textContent = data.symbol;
 
     
     let price = document.createElement("div");
-    price.textContent = data.priceUsd;
+    price.textContent = numeral(data.priceUsd).format('$0,0.00');
 
     let marketCap = document.createElement("div");
-    marketCap.textContent = data.marketCapUsd;
+    marketCap.textContent = numeral(data.marketCapUsd).format("($ 0.00 a)");
 
     let vwp = document.createElement("div");
-    vwp.textContent = data.vwap24Hr;
+    vwp.textContent = numeral(data.vwap24Hr).format('$0,0.00');
 
     let supply = document.createElement("div");
-    supply.textContent =data.supply;
+    supply.textContent =numeral(data.supply).format("($ 0.00 a)");
 
     let volume = document.createElement("div");
-    volume.textContent = data.vo4lumeUsd24Hr;
+    volume.textContent = numeral(data.volumeUsd24Hr).format("($ 0.00 a)");
 
     let change = document.createElement("div");
-    change.textContent = data.changePercent24Hr;
+    change.textContent = numeral(data.changePercent24Hr).format("(0.000 %)");
 
 
     nameContainerText.appendChild(nameContainerName);
@@ -63,6 +71,17 @@ function renderCoin(data){
 
     coinsSection.appendChild(row);
 }
+
+//errorSection:
+
+function renderError(msg) {
+  let errorContainer = document.createElement("div");
+  errorContainer.textContent = msg;
+  errorContainer.classList.add("error");
+
+  coinsSection.appendChild(errorContainer);
+}
+
 
 
 
@@ -85,4 +104,8 @@ async function getAssetsList() {
         renderCoin(item);
     });}
   
-    renderCoinsList();
+    renderCoinsList().catch(function(error) {
+       
+      renderError("ERRRRRRRRRROR...!")
+
+    });
