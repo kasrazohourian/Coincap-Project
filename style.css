@@ -200,3 +200,74 @@ nav .setting >div{
     font-size: 30px;
     font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
 }
+
+@media (max-width: 768px) {
+    .first-nav {
+      flex-direction: column; /* Elemente untereinander statt nebeneinander */
+      padding: 10px;
+    }
+  
+    .buy a {
+      font-size: 12px; /* Kleinere Schriftgröße auf mobilen Geräten */
+    }
+  
+    section {
+      height: auto; /* Variable Höhe für mobile Geräte */
+    }
+  
+    .container {
+      max-width: 100%; /* Volle Breite auf mobilen Geräten */
+      padding: 10px;
+    }
+  
+    .nav-container {
+      flex-direction: column; /* Navigationselemente untereinander */
+      text-align: center; /* Zentriere den Text */
+    }
+  
+    .main-head {
+      height: auto; /* Höhe anpassen für mobiles Layout */
+      padding: 20px;
+    }
+  
+    .coinsSection {
+      bottom: 0; /* Positionierung anpassen */
+      padding: 20px;
+      max-width: 100%; /* Volle Breite für mobile Geräte */
+    }
+  
+    .coins-row {
+      grid-template-columns: 1fr 1fr; /* Nur 2 Spalten statt 8 auf kleineren Bildschirmen */
+      font-size: 12px; /* Kleinere Schriftgröße */
+      padding: 10px 0;
+    }
+  
+    .coins-row div {
+      text-align: center; /* Zentrierter Text auf kleineren Geräten */
+    }
+  
+    .error {
+      font-size: 24px; /* Kleinere Fehlermeldung auf mobilen Geräten */
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .coins-row {
+      grid-template-columns: 1fr; /* Eine Spalte auf sehr kleinen Bildschirmen */
+    }
+  
+    .head {
+      font-size: 16px; /* Kleinere Überschrift auf sehr kleinen Bildschirmen */
+      padding: 10px;
+    }
+  
+    .buy a {
+      font-size: 10px; /* Noch kleinere Schriftgröße für sehr kleine Bildschirme */
+    }
+  
+    .nav-container {
+      padding: 10px;
+    }
+  }
+  
